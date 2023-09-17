@@ -1,0 +1,42 @@
+<p-dialog [(visible)]="vehicleDialog" [style]="{width: '700px'}" (onHide)="hideDialog()" header="Vehicle Details" [modal]="true">
+  <ng-template pTemplate="content">
+    <form [formGroup]="vehicleForms">
+
+      <div class="grid p-fluid">
+        <div class="field col-12 md:col-3">
+          <label for="vehicleType">VehicleType</label>
+          <p-multiSelect formControlName="vehicleType" [options]="this.vehicleType" [showHeader]="false"
+            appendTo="body"></p-multiSelect>
+        </div>
+        <div class="field col-12 md:col-3">
+          <label for="vehicleLicensePlate">VehicleLicensePlate</label>
+          <input type="text" pInputText id="vehicleLicensePlate" formControlName="vehicleLicensePlate" />
+        </div>
+        <div class="field col-12 md:col-3">
+          <label for="vehicleVolumeCapacity">vehicleVolumeCapacity</label>
+          <input type="text" pInputText id="vehicleVolumeCapacity" formControlName="vehicleVolumeCapacity" />
+        </div>
+        <div class="field col-12 md:col-3">
+          <label for="vehicleWeightCapacity">vehicleWeightCapacity</label>
+          <input type="text" pInputText id="vehicleWeightCapacity" formControlName="vehicleWeightCapacity" />
+        </div>
+        <div class="field col-12 md:col-3">
+          <label for="driver">Driver</label>
+          <input type="text" pInputText id="driver" formControlName="driver" />
+        </div>
+        <div class="field col-12 md:col-3">
+          <label for="VehicleStatus">VehicleStatus</label>
+          <p-multiSelect formControlName="vehicleStatus" [options]="this.vehicleStatus" [showHeader]="false"
+            appendTo="body"></p-multiSelect>
+        </div>
+      </div>
+    </form>
+
+
+  </ng-template>
+
+  <ng-template pTemplate="footer">
+    <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
+    <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="saveVehicle()"></button>
+  </ng-template>
+</p-dialog>

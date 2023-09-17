@@ -1,0 +1,107 @@
+<div class="flex flex-column align-items-center justify-content-center">
+
+    <div
+        style="border-radius:56px; padding:0.3rem; background: linear-gradient(180deg, var(--primary-color) 10%, rgba(33, 150, 243, 0) 30%);">
+        <div class="w-full surface-card py-8 px-5 sm:px-8" style="border-radius:53px">
+            <div class="text-center mb-5">
+                <h2>Create</h2>
+
+            </div>
+
+            <div class="grid p-fluid">
+                <div class="field col-7 md:col-5">
+                    <span>Are you member of company?</span>
+
+                </div>
+                <div class="field col-4 md:col-2 ">
+                    <p-toggleButton [(ngModel)]="isCompany" onLabel="Yes" offLabel="No"></p-toggleButton>
+                </div>
+
+            </div>
+
+
+
+
+            <form [formGroup]="signinForm" (ngSubmit)="onSubmit()" class="form-container">
+
+
+                <div class="form-field">
+                    <label for="userName">Username</label>
+                    <input id="userName" formControlName="userName" pInputText />
+                </div>
+                <div class="form-field">
+                    <label for="password">Password</label>
+                    <input id="password" formControlName="password" pInputText />
+                </div>
+
+                <div class="form-field">
+                    <label for="firstName">First Name</label>
+                    <input id="firstName" formControlName="firstName" pInputText />
+                </div>
+                <div class="form-field">
+                    <label for="familyName">Family Name</label>
+                    <input id="familyName" formControlName="familyName" pInputText />
+                </div>
+
+                <div class="form-field">
+                    <label for="email">Email</label>
+                    <input id="email" formControlName="email" pInputText />
+                </div>
+
+
+
+                <div class="form-field" *ngIf="isCompany">
+                    <label for="companyName">Company Name</label>
+                    <input id="companyName" formControlName="companyName" pInputText />
+                </div>
+                <div class="form-field" *ngIf="isCompany">
+                    <label for="title">Title</label>
+                    <input id="title" formControlName="title" pInputText />
+                </div>
+                <div class="form-field" *ngIf="isCompany">
+                    <label for="name">Name</label>
+                    <input id="name" formControlName="name" pInputText />
+                </div>
+                <div class="form-field" *ngIf="isCompany">
+                    <label for="surname">Surname</label>
+                    <input id="surname" formControlName="surname" pInputText />
+                </div>
+                <div class="form-field" *ngIf="isCompany">
+                    <label for="address">Address</label>
+                    <input id="address" formControlName="address" pInputText />
+                </div>
+                <div class="form-field" *ngIf="isCompany">
+                    <label for="street">Street</label>
+                    <input id="street" formControlName="street" pInputText />
+                </div>
+                <div class="form-field" *ngIf="isCompany">
+                    <label for="alley">Alley</label>
+                    <input id="alley" formControlName="alley" pInputText />
+                </div>
+                <div class="form-field" *ngIf="isCompany">
+                    <label for="district">District</label>
+                    <input id="district" formControlName="district" pInputText />
+                </div>
+                <div class="form-field" *ngIf="isCompany">
+                    <label for="buildingNumber">Building Number</label>
+                    <input id="buildingNumber" formControlName="buildingNumber" pInputText />
+                </div>
+                <div class="form-field" *ngIf="isCompany">
+                    <label for="apartmentNumber">Apartment Number</label>
+                    <input id="apartmentNumber" formControlName="apartmentNumber" pInputText />
+                </div>
+                <div class="form-field" *ngIf="isCompany">
+                    <label for="postCode">Post Code</label>
+                    <input id="postCode" formControlName="postCode" pInputText />
+                </div>
+                <div class="form-field" *ngIf="isCompany">
+                    <label for="vkn">VKN</label>
+                    <input id="vkn" formControlName="vkn" pInputText />
+                </div>
+                <div class="form-field submit-button">
+                    <button pButton pRipple label="Sign In"  class="w-full p-3 text-xl"></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

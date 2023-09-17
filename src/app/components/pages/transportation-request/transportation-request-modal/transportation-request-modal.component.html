@@ -1,0 +1,62 @@
+<p-dialog [(visible)]="transportationRequestDialog" [style]="{width: '700px'}" header="TransportationRequest Details" [modal]="true">
+  <ng-template pTemplate="content">
+    <form [formGroup]="transportationRequestForms">
+
+      <div class="grid p-fluid">
+        <div class="field col-12 md:col-3">
+          <label for="requestType">RequestType</label>
+          <!-- <p-multiSelect formControlName="requestType" [options]="this.request" [showHeader]="false"
+                         appendTo="body"></p-multiSelect> -->
+          <p-multiSelect formControlName="requestType" [options]="[]" [showHeader]="false"
+                         appendTo="body"></p-multiSelect>
+        </div>
+        <div class="field col-12 md:col-3">
+          <label for="outputAddress">OutputAddress</label>
+          <!-- <p-multiSelect formControlName="outputAddress" [options]="this.outputAddress" [showHeader]="false"
+                         appendTo="body"></p-multiSelect> -->
+          <p-multiSelect formControlName="outputAddress" [options]="[]" [showHeader]="false"
+                         appendTo="body"></p-multiSelect>
+        </div>
+        <div class="field col-12 md:col-3">
+          <label for="destinationAddress">DestinationAddress</label>
+          <p-multiSelect formControlName="destinationAddress" [options]="[]" [showHeader]="false"
+                         appendTo="body"></p-multiSelect>
+          <!-- <p-multiSelect formControlName="destinationAddress" [options]="this.destinationAddress" [showHeader]="false"
+                         appendTo="body"></p-multiSelect> -->
+        </div>
+        <div class="field col-12 md:col-3">
+          <label for="weight">Weight</label>
+          <input type="text" pInputText id="weight" formControlName="weight" />
+        </div>
+        <div class="field col-12 md:col-3">
+          <label for="volume">Volume</label>
+          <input type="text" pInputText id="volume" formControlName="volume" />
+        </div>
+        <div class="field col-12 md:col-3">
+          <label for="note">Note</label>
+          <input type="text" pInputText id="note" formControlName="note" />
+        </div>
+        <div class="field col-12 md:col-3">
+          <label for="firstDateRange">FirstDateRange</label>
+          <input type="text" pInputText id="firstDateRange" formControlName="firstDateRange" />
+        </div>
+        <div class="field col-12 md:col-3">
+          <label for="lastDateRange">LastDateRange</label>
+          <input type="text" pInputText id="lastDateRange" formControlName="lastDateRange" />
+        </div>
+        <div class="field col-12 md:col-3">
+          <label for="documentStatus">DocumentStatus</label>
+          <p-multiSelect formControlName="documentStatus" [options]="this.document" [showHeader]="false"
+                         appendTo="body"></p-multiSelect>
+        </div>
+      </div>
+    </form>
+
+
+  </ng-template>
+
+  <ng-template pTemplate="footer">
+    <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
+    <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="saveTransportationRequest()"></button>
+  </ng-template>
+</p-dialog>

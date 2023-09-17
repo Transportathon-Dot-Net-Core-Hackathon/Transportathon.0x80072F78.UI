@@ -1,0 +1,33 @@
+.form-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 80vw;
+  }
+  
+  .form-field {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-field label {
+    margin-bottom: 5px;
+  }
+  
+  .submit-button {
+    display: flex;
+    justify-content: center;
+  }
+  
+  @media(min-width: 600px) {
+    .form-container {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    .submit-button {
+      grid-column: span 3;
+    }
+  }

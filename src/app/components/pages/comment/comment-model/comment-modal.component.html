@@ -1,0 +1,24 @@
+<p-dialog [(visible)]="commentDialog" [style]="{width: '700px'}" header="Comment Details" [modal]="true">
+    <ng-template pTemplate="content">
+        <form [formGroup]="commentForms">
+
+            <div class="grid p-fluid">
+                <div class="field col-12 md:col-3">
+                  <label for="score">Score</label>
+                    <input type="text" pInputText id="score" formControlName="score" />
+                </div>
+                <div class="field col-12 md:col-3">
+                  <label for="text">Text</label>
+                    <input type="text" pInputText id="text" formControlName="text" />
+                </div>
+            </div>
+        </form>
+
+
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <button pButton pRipple label="Cancel" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
+        <button pButton pRipple label="Save" icon="pi pi-check" class="p-button-text" (click)="saveComment()"></button>
+    </ng-template>
+</p-dialog>

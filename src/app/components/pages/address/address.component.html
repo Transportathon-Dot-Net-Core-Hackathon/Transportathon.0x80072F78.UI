@@ -1,0 +1,45 @@
+<p-toast></p-toast>
+
+<div class="card">
+    <p-toolbar styleClass="p-mb-4">
+        <ng-template pTemplate="left">
+            <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success p-mr-2"
+                (click)="openNew()"></button>
+        </ng-template>
+
+    </p-toolbar>
+
+    <p-table [columns]="cols" [value]="addresss" [tableStyle]="{'min-width': '50rem'}">
+        <ng-template pTemplate="header" let-columns>
+            <tr>
+                <th>
+
+                </th>
+                <th *ngFor="let col of columns">
+                    <ng-container *ngIf="!col.hide">
+                        {{col.header}}
+                    </ng-container>
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData let-columns="columns">
+            <tr>
+                <td>
+                    <button pButton pRipple icon="pi pi-pencil"
+                  class="p-button-sm p-button-text  p-button-success p-mr-2"
+                  (click)="editAddress(rowData)"></button>
+                    <button pButton pRipple icon="pi pi-trash" class="p-button-sm p-button-text p-button-warning"
+                        (click)="deleteAddress(rowData)"></button>
+                </td>
+                <td *ngFor="let col of columns">
+                    <ng-container *ngIf="!col.hide">
+                        {{rowData[col.field]}}
+                    </ng-container>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+<app-address-modal *ngIf="addressDialog" [addressDialog]="addressDialog" [mode]="mode" (modalClosed)="this.modalClosed()">
+</app-address-modal>
+<p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>
